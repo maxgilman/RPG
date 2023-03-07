@@ -138,6 +138,11 @@ document.addEventListener('keypress', (event) => {keys[event.key]=true});
 document.addEventListener('keyup', (event) => {keys[event.key]=false});
 function main(){
     if (keys['w']){
+        img = new Image();
+        img.src = 'https://maxgilman.github.io/RPG/tank.jpeg';
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0,100,200);
+        };
         spaceship.xSpeed+=Math.sin(-spaceship.angle)*2;
         spaceship.ySpeed+=Math.cos(-spaceship.angle)*2;
     }
